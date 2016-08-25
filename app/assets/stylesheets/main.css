@@ -383,7 +383,14 @@ ul.dropdown-menu li{
 }
 
 .container-submenu{
-  min-height: 250px;
-  background: #ccc;
+  background: #5B5757;
   padding: 20px 20px 20px 20px;
+}
+
+.container-submenu a{
+  color: #DBDBDB;
+}
+
+.container-submenu a:hover{
+  color: #0079BF;
 }
