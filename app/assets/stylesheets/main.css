@@ -406,6 +406,12 @@ ul.dropdown-menu li{
 .container-submenu ul.submenu li{
   padding: 5px 0 5px 0;
 }
+
+.container-submenu ul.submenu li a{
+  padding: 6px 4px 6px 4px;
+  text-decoration: underline;
+}
+
 .container-submenu ul.submenu li a:hover{
   color: #545454;
 }
