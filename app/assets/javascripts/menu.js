@@ -3,11 +3,18 @@ $(function(){
   $(".panel-modulo").click(function(event) {
     
     var moduloId = $(this).data("modulo-id");
-
-    $(".row-submenu").hide();
-    $(".row-submenu[data-modulo-id='" + moduloId + "']").show();
-    $(".panel-ligacao").hide();
-    $(this).next(".panel-ligacao").show();
+    var $submenu = $(".row-submenu[data-modulo-id='" + moduloId + "']");
+    
+    if( $submenu.is(":visible") ){
+      $submenu.hide();
+      $(this).next(".panel-ligacao").hide();
+    }
+    else{
+      $(".panel-ligacao").hide();
+      $(".row-submenu").hide();
+      $(this).next(".panel-ligacao").show();
+      $submenu.show();
+    }
 
   });
 
