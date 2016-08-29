@@ -6,6 +6,8 @@ $(function(){
 
     $(".row-submenu").hide();
     $(".row-submenu[data-modulo-id='" + moduloId + "']").show();
+    $(".panel-ligacao").hide();
+    $(this).next(".panel-ligacao").show();
 
   });
 
