@@ -426,7 +426,7 @@ ul.dropdown-menu li{
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 50px 133px 0 130px;
+  border-width: 20px 133px 0 130px;
   border-color: #edeff0 transparent transparent transparent;
   line-height: 0px;
   _border-color: #edeff0 #000000 #000000 #000000;
