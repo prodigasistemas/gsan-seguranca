@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  layout 'application'
+
   def index
     @menu = Menu.get(961).deep_symbolize_keys!
     @linhas = @menu[:menu][:submenu].size / 4
