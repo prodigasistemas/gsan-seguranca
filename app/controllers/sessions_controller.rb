@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :acesso_restrito, only: [:new, :create]
+  protect_from_forgery except: :destroy
 
   layout 'home'
 
