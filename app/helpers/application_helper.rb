@@ -11,7 +11,8 @@ module ApplicationHelper
     seguranca: 'fa-lock',
     batch: 'fa-cog',
     financeiro: 'fa-dollar',
-    operacional: 'fa-cogs'
+    operacional: 'fa-cogs',
+    desempenho: 'fa-area-chart'
   }
 
   def get_icone(modulo)
