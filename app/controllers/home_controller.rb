@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @menu = Menu.get(usuario_logado.id).deep_symbolize_keys!
-    @linhas = @menu[:menu][:submenu].size / 4
+    @linhas = (@menu[:menu][:submenu].size / 4) + (@menu[:menu][:submenu].size % 4)
     @index = 3
     @inicio = 0
     @tamanho = 4
