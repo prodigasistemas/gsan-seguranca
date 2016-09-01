@@ -42,7 +42,15 @@ class ApplicationController < ActionController::Base
   end
 
   def setar_cookie
+    value = verifier.generate([usuario_logado.id, 1.week.ago])
+
     cookies.delete :gsan, domain: DOMAIN
-    cookies.permanent[:gsan] = { value: usuario_logado.id, domain: DOMAIN }
+    cookies.permanent[:gsan] = { value: value, domain: DOMAIN }
+  end
+
+  private
+
+  def verifier
+    @verifier ||= ActiveSupport::MessageVerifier.new('gsan', serializer: YAML)
   end
 end
