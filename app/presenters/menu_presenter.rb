@@ -7,7 +7,16 @@ class MenuPresenter < SimpleDelegator
     @inicio = 0
     @tamanho = 4
     @inicio_submenu = 0
-    @numero_de_linhas = (@menu[:menu][:submenu].size / 4) + (@menu[:menu][:submenu].size % 4)
+    @numero_de_modulos = @menu[:menu][:submenu].size
+    @numero_de_linhas = set_numero_de_linhas
     __setobj__(menu)
+  end
+
+  private
+
+  attr_reader :numero_de_modulos
+
+  def set_numero_de_linhas
+    (numero_de_modulos / 4) + (numero_de_modulos % 4)
   end
 end
