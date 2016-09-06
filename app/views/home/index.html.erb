@@ -1,25 +1,25 @@
-<% @linhas.times do %>
+<% @menu.numero_de_linhas.times do %>
 <div class="row">
-  <% @menu[:menu][:submenu].slice(@inicio, @tamanho).each do |submenu| %>
-  <div class="col-md-3 m-b-lg">
-    <div class="panel panel-modulo panel-default" data-modulo-id="<%= submenu[:id] %>">
-      <div class="panel-body">
-        <i class="fa <%= get_icone submenu[:descricao] %> fa-4x" aria-hidden="true"></i>
+  <% @menu[:menu][:submenu].slice(@menu.inicio, @menu.tamanho).each do |submenu| %>
+    <div class="col-md-3 m-b-lg">
+      <div class="panel panel-modulo panel-default" data-modulo-id="<%= submenu[:id] %>">
+        <div class="panel-body">
+          <i class="fa <%= get_icone submenu[:descricao] %> fa-4x" aria-hidden="true"></i>
 
-        <h1> <%= submenu[:descricao] %> </h1>
+          <h1> <%= submenu[:descricao] %> </h1>
+        </div>
+      </div>
+      <div class="panel-ligacao">
+
       </div>
     </div>
-    <div class="panel-ligacao">
-
-    </div>
-  </div>
   <% end -%>
 </div>
 
-<% @menu[:menu][:submenu].slice(@inicio, @tamanho).each do |submenu| %>
-<% @inicio_submenu = 0 %>
+<% @menu[:menu][:submenu].slice(@menu.inicio, @menu.tamanho).each do |submenu| %>
+  <% @menu.inicio_submenu = 0 %>
   <%= render partial: "submenu", locals: { submenu: submenu } %>
 <% end -%>
 
-  <% @inicio = @inicio + 4  %>
+  <% @menu.inicio += 4  %>
 <% end -%>
