@@ -1,0 +1,22 @@
+<ul class="submenu">
+  <% funcionalidade[:submenu].each do |funcionalidade| %>
+    <% if funcionalidade[:submenu].present? %>
+      <li>
+        <a class="funcionalidade-pai" href="">
+          <%= funcionalidade[:descricao] %>
+          <span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+        </a>
+        
+        <ul class="submenu">
+          <% funcionalidade[:submenu].each do |funcionalidade| %>
+            <li>
+              <a href="<%= funcionalidade[:url] %>"><%= funcionalidade[:descricao] %></a>
+            </li>
+          <% end -%>
+        </ul>
+      </li>
+    <% else %>
+      <li><a href="<%= funcionalidade[:url] %>"> <%= funcionalidade[:descricao] %></a></li>
+    <% end -%>
+  <% end -%>
+</ul>
