@@ -9,7 +9,6 @@ gem 'rest-client'
 gem 'dotenv-rails'
 
 gem 'kaminari'
-gem 'logstasher'
 gem 'log_file'
 
 group :development, :test do
