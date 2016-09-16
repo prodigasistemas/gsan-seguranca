@@ -48,8 +48,6 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:gsan] = { value: value, domain: DOMAIN }
   end
 
-  private
-
   def verifier
     @verifier ||= ActiveSupport::MessageVerifier.new('gsan', serializer: YAML)
   end
