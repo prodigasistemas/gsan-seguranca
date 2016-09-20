@@ -365,6 +365,7 @@ ul.dropdown-menu li{
   text-align: center;
   cursor: pointer;
   height: 230px;
+  background: #EDEFF0;
 }
 
 .panel-modulo h1{
@@ -383,14 +384,52 @@ ul.dropdown-menu li{
 }
 
 .container-submenu{
-  background: #5B5757;
+  background: #EDEFF0;
+  /*background: #CCCCCC;*/
   padding: 20px 20px 20px 20px;
 }
 
 .container-submenu a{
-  color: #DBDBDB;
+  color: #545454;
+  /*color: #C1C1C1;*/
+}
+
+.container-submenu ul.nav a:hover{
+  background: #ccc;
 }
 
 .container-submenu a:hover{
   color: #0079BF;
+}
+
+.container-submenu .submenu{
+  display: none;
+}
+
+.container-submenu ul.submenu li{
+  padding: 10px 0 10px 0;
+}
+
+.container-submenu ul.submenu li a{
+  padding: 10px 4px 10px 4px;
+  text-decoration: underline;
+}
+
+.container-submenu ul.submenu li a:hover{
+  color: #0079BF;
+  /*color: #fff;*/
+  background: none;
+}
+
+.panel-ligacao{
+  display: none;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 133px 0 130px;
+  border-color: #edeff0 transparent transparent transparent;
+  line-height: 0px;
+  _border-color: #edeff0 #000000 #000000 #000000;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+  margin-top: -22px;
 }

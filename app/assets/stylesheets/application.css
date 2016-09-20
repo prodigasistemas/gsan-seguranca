@@ -13,5 +13,7 @@
  *= require vendor
  *= require main
  *= require button
+ *= require sidebar
+ *= require sigin
  *= require_self
  */

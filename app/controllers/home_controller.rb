@@ -1,11 +1,8 @@
 class HomeController < ApplicationController
+  layout 'application'
+
   def index
-    @menu = Menu.get(961).deep_symbolize_keys!
-    @linhas = @menu[:menu][:submenu].size / 4
-    @index = 3
-    @inicio = 0
-    @tamanho = 4
-    @inicio_submenu = 0
-    @tamanho_submenu = 10
+    menu = Menu.get(usuario_logado.id)
+    @menu = MenuPresenter.new( menu )
   end
 end

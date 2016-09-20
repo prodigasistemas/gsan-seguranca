@@ -25,20 +25,16 @@
           </div>
           <div class="col-md-4">
             <ul class="top-nav">
-              <!-- <li>
-                <a href="#"><i class="fa fa-bell"></i> <span class="badge">42</span></a>
-              </li> -->
-
               <li class="dropdown">
                 <div class="dropdown-toggle dropdown-user" id="dropdownMenu1" data-toggle="dropdown">
-                  <%#= @usuario_logado.nome %>
+                  <%= @usuario_logado.nome %>
                   <span class="caret"></span>
                 </div>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                   <li>
-                    <%#= link_to session_path, method: :delete do %>
-                      <!-- <i class="fa fa-sign-out"></i> Sair -->
-                    <%# end %>
+                    <%= link_to session_path, method: :delete do %>
+                      <i class="fa fa-sign-out"></i> Sair
+                    <% end %>
                   </li>
                 </ul>
               </li>
