@@ -5,9 +5,10 @@ class MenuPresenter < SimpleDelegator
   def initialize(menu)
     @menu = menu.deep_symbolize_keys!
     @inicio = 0
-    @tamanho = 4
     @inicio_submenu = 0
+    @numero_colunas = 4
     @numero_de_modulos = @menu[:menu][:submenu].size
+    @tamanho = @numero_de_modulos >= @numero_colunas ? @numero_colunas : @numero_de_modulos
     @numero_de_linhas = set_numero_de_linhas
     __setobj__(menu)
   end
@@ -17,7 +18,6 @@ class MenuPresenter < SimpleDelegator
   attr_reader :numero_de_modulos
 
   def set_numero_de_linhas
-    return 1 if @numero_de_modulos < @tamanho
     (numero_de_modulos / @tamanho) + (numero_de_modulos % @tamanho)
   end
 end
