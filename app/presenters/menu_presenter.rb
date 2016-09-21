@@ -17,6 +17,7 @@ class MenuPresenter < SimpleDelegator
   attr_reader :numero_de_modulos
 
   def set_numero_de_linhas
-    (numero_de_modulos / 4) + (numero_de_modulos % 4)
+    return 1 if @numero_de_modulos < @tamanho
+    (numero_de_modulos / @tamanho) + (numero_de_modulos % @tamanho)
   end
 end
