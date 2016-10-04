@@ -1,3 +1,7 @@
+<div class="form-group">
+  <input type="text" class="input-large search-query">
+</div>
+
 <% @menu.numero_de_linhas.times do %>
   <div class="row">
     <% @menu[:menu][:submenu].slice(@menu.inicio, @menu.tamanho).each do |submenu| %>
