@@ -35,7 +35,7 @@
     $(function(){
       $( ".search-query" ).autocomplete({
         minLength: 2,
-        source: <%= raw @menu_to_search.to_json %>,
+        source: <%= raw @menu.converter_hash.to_json %>,
         select: function( event, ui ) {
           window.location.href = ui.item.url;
         }
