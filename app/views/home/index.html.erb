@@ -1,3 +1,9 @@
+<div class="row">
+  <div class="input-group search-group">
+    <input type="text" class="form-control search-query" placeholder="Pesquisar por funcionalidades">
+  </div>
+</div>
+
 <% @menu.numero_de_linhas.times do %>
   <div class="row">
     <% @menu[:menu][:submenu].slice(@menu.inicio, @menu.tamanho).each do |submenu| %>
@@ -23,3 +29,17 @@
 
   <% @menu.inicio += @menu.tamanho  %>
 <% end -%>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $(function(){
+      $( ".search-query" ).autocomplete({
+        minLength: 2,
+        source: <%= raw @menu.converter_hash.to_json %>,
+        select: function( event, ui ) {
+          window.location.href = ui.item.url;
+        }
+      });
+    });
+  </script>
+<% end %>

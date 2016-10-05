@@ -15,5 +15,6 @@
  *= require button
  *= require sidebar
  *= require sigin
+ *= require jquery-ui
  *= require_self
  */
