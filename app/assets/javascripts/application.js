@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require vendor
+//= require jquery-ui
 //= require_tree .

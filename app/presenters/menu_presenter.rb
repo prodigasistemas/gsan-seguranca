@@ -13,6 +13,14 @@ class MenuPresenter < SimpleDelegator
     __setobj__(menu)
   end
 
+  def converter_hash
+    @menu_to_search = []
+
+    flatten_to_hash(@menu[:menu][:submenu])
+
+    @menu_to_search
+  end
+
   private
 
   attr_reader :numero_de_modulos
@@ -20,5 +28,27 @@ class MenuPresenter < SimpleDelegator
   def set_numero_de_linhas
     num_linhas = (numero_de_modulos / @tamanho.to_f).floor
     num_linhas += 1 if numero_de_modulos % @tamanho > 0
+  end
+
+  def flatten_to_hash(submenus, categoria = "")
+    submenus.each do |submenu|
+      if submenu[:url].present?
+        @menu_to_search << funcionalidade(categoria, submenu[:descricao], submenu[:url])
+      else
+        if categoria.present?
+          flatten_to_hash(submenu[:submenu], "#{categoria} - #{submenu[:descricao]}")
+        else
+          flatten_to_hash(submenu[:submenu], submenu[:descricao])
+        end
+      end
+    end
+  end
+
+  def funcionalidade(categoria, descricao, url)
+    {
+      label: "#{categoria} - #{descricao}",
+      value: descricao,
+      url: url
+    }
   end
 end
