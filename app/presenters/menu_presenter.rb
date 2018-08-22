@@ -9,7 +9,7 @@ class MenuPresenter < SimpleDelegator
     @numero_colunas = 4
     @numero_de_modulos = @menu[:menu][:submenu].size
     @tamanho = @numero_de_modulos >= @numero_colunas ? @numero_colunas : @numero_de_modulos
-    @numero_de_linhas = set_numero_de_linhas
+    @numero_de_linhas = definir_numero_de_linhas
     __setobj__(menu)
   end
 
@@ -25,9 +25,10 @@ class MenuPresenter < SimpleDelegator
 
   attr_reader :numero_de_modulos
 
-  def set_numero_de_linhas
+  def definir_numero_de_linhas
     num_linhas = (numero_de_modulos / @tamanho.to_f).floor
     num_linhas += 1 if numero_de_modulos % @tamanho > 0
+    num_linhas
   end
 
   def flatten_to_hash(submenus, categoria = "")
