@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/prodigasistemas/log_file.git
+  remote: https://github.com/prodigasistemas/log_file.git
   revision: 2dd193dc582dfd2a40790dbea8feade50be9485e
   specs:
     log_file (0.0.4)
@@ -137,7 +137,7 @@ GEM
       pry (>= 0.9.10)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.4)
+    rack (1.6.13)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7)
