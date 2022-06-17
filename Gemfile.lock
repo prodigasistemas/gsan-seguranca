@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/prodigasistemas/log_file.git
+  remote: https://github.com/prodigasistemas/log_file.git
   revision: 2dd193dc582dfd2a40790dbea8feade50be9485e
   specs:
     log_file (0.0.4)
@@ -101,7 +101,8 @@ GEM
       activesupport (>= 4.1.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
-    i18n (0.7.0)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
