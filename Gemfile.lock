@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/prodigasistemas/log_file.git
+  remote: https://github.com/prodigasistemas/log_file.git
   revision: 2dd193dc582dfd2a40790dbea8feade50be9485e
   specs:
     log_file (0.0.4)
@@ -214,9 +214,9 @@ GEM
       eventmachine (~> 1.0, >= 1.0.4)
       rack (>= 1, < 3)
     thor (0.19.1)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tilt (2.0.5)
-    tzinfo (1.2.2)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
